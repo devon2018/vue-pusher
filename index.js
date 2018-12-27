@@ -10,6 +10,9 @@ var Pusher = require('pusher-js');
  * @param {Object} options
  */
 function VuePusher (api_key, options) {
+    if(options.logToConsole){
+        Pusher.logToConsole = true
+    }
     this.pusher   = new Pusher(api_key, options);
     this.channels = [];
 }
